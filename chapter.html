@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter — Geethopadesam</title>
+<meta name="description" content="Read this chapter of the Bhagavad Gita verse by verse, in Sanskrit with transliteration and translation.">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Noto+Serif+Devanagari:wght@400;600&family=Noto+Serif+Telugu:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<script>
+  (function () {
+    var saved = localStorage.getItem('geethopadesam-theme');
+    var dark = saved ? saved === 'dark'
+      : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+  })();
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <img class="mark" src="/assets/logo-mark.png" alt="" width="448" height="448">
+      <span class="brand-text">
+        <span class="brand-name">Geethopadesam</span>
+        <span class="brand-sub">Bhagavad Gita</span>
+      </span>
+    </a>
+    <a class="header-link" href="/#chapters">All chapters</a>
+    <div class="pill-group script-switch" id="script-switch" role="group" aria-label="Script for Sanskrit text">
+      <button type="button" data-script="devanagari" aria-pressed="false">देवनागरी</button>
+      <button type="button" data-script="telugu" aria-pressed="true">తెలుగు</button>
+    </div>
+    <button class="icon-btn" id="theme-toggle" type="button" title="Toggle theme" aria-label="Toggle light and dark theme">◐</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <a class="crumb" href="/#chapters">← All chapters</a>
+
+  <div id="chapter-hero"></div>
+  <div id="controls"></div>
+
+  <div id="verse-list" class="verse-list" aria-live="polite">
+    <div class="state"><span class="om-spin">ॐ</span><p>Loading verses…</p></div>
+  </div>
+
+  <nav id="pager" class="pager"></nav>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <img class="footer-logo" src="/assets/logo-lockup.png"
+         alt="Geethopadesam — wisdom eternal, guidance timeless"
+         width="1200" height="407" loading="lazy">
+  </div>
+  <div class="wrap">
+    <span class="deva" data-sanskrit="ॐ तत्सत्">ॐ तत्सत्</span>
+  </div>
+</footer>
+
+<script src="/app.js"></script>
+<script>renderChapter();</script>
+</body>
+</html>
